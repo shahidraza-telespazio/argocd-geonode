@@ -11,5 +11,5 @@ helmCharts:
     repo: https://GeoNodeUserGroup-DE.github.io/geonode-k8s/
     releaseName: geonode-k8s
     namespace: geonode
-    version: 1.2.3-alpha
-    valuesFile: values.yaml  # Uncommented this line
+    version: 1.2.2
+    valuesFile: values.yaml
