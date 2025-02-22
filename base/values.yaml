@@ -7,13 +7,13 @@ geonode:
     debug_static: True
     externalScheme: http
     externalDomain: geonode
-  resources:
-    limits:
-      cpu: "1"
-      memory: "2Gi"
-    requests:
-      cpu: "500m"
-      memory: "1Gi"
+  # resources:
+  #   limits:
+  #     cpu: "1"
+  #     memory: "2Gi"
+  #   requests:
+  #     cpu: "500m"
+  #     memory: "1Gi"
   persistant:
     storageSize: 2Gi
   ingress:
@@ -29,22 +29,22 @@ geonode:
     open_signup: True
     email_verification: "False"
     authentication_method: username_email
-geoserver:
-  resources:
-    limits:
-      cpu: "1"
-      memory: "2Gi"
-    requests:
-      cpu: "500m"
-      memory: "1Gi"
-pycsw:
-  resources:
-    limits:
-      cpu: "1"
-      memory: "2Gi"
-    requests:
-      cpu: "500m"
-      memory: "1Gi"
+# geoserver:
+#   resources:
+#     limits:
+#       cpu: "1"
+#       memory: "2Gi"
+#     requests:
+#       cpu: "500m"
+#       memory: "1Gi"
+# pycsw:
+#   resources:
+#     limits:
+#       cpu: "1"
+#       memory: "2Gi"
+#     requests:
+#       cpu: "500m"
+#       memory: "1Gi"
 rabbitmq:
   replicaCount: 1
   auth:
@@ -56,7 +56,7 @@ postgres:
   geonode_databasename_and_username: geonode
   geodata_databasename_and_username: geodata
   external:
-    hostname: geonode-postgresql
+    hostname: geonode-postgresql.postgres
     port: 5432
     secret:
       postgres_password: auKtMMdl1wtkjVMXwr4RWEr3JtwuR2HavR3d4BEOMy2P6uGrHzsmD4XImAhSYvqp
