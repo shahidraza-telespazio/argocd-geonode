@@ -5,12 +5,11 @@ namespace: geonode
 
 resources:
   - namespace.yaml
-  - postgres.yaml
 
 helmCharts:
   - name: geonode-k8s
     repo: https://GeoNodeUserGroup-DE.github.io/geonode-k8s/
     releaseName: geonode-k8s
     namespace: geonode
-    version: 1.2.2
+    version: 1.2.3-alpha
     valuesFile: values.yaml

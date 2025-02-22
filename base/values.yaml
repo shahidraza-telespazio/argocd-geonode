@@ -44,12 +44,12 @@ postgres:
   geodata_databasename_and_username: geodata
 
   external:
-    hostname: my-external-postgres.com
+    hostname: geonode-postgresql
     port: 5432
     secret:
-      postgres_password: postgres
-      geonode_password: geonode
-      geodata_password: geogeonode
+      postgres_password: mJVulBcn8ivuAW5LdUeZGyDVumKqSA4otCfqntTm1a8nv8sXbFmEf8oUSyX7JUHq
+      geonode_password: frNyGcl68Cr93BCWiafXNwW37fiB191q3W1ty9aRbuXGQfFakxoLjNjktROz75MY
+      geodata_password: MbTQLeoySfxKW4tCDDmz07xSDb5V8I50nJ2KXguXqTDsBbvVgy0b61xQXWbliUJA
 
 postgres-operator:
   enabled: False
