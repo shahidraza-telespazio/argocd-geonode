@@ -1,0 +1,12 @@
+dependencies:
+- name: postgres-operator
+  repository: https://opensource.zalando.com/postgres-operator/charts/postgres-operator/
+  version: 1.9.0
+- name: rabbitmq
+  repository: https://charts.bitnami.com/bitnami
+  version: 10.1.19
+- name: memcached
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.14.0
+digest: sha256:7cb171730349556e9bcb93dcce933fee6ad07eb562b83f6c865c3349050b9d0d
+generated: "2024-10-28T12:10:11.854274314Z"

@@ -1,0 +1,41 @@
+
+{{- if eq .Values.postgres.type "operator" -}}
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: "{{ include "postgres_pod_name" . }}"
+spec:
+  teamId: {{ .Release.Name | quote }}
+  volume:
+    size: {{ .Values.postgres.operator.storageSize }}
+  numberOfInstances: {{ int .Values.postgres.operator.numberOfInstances }}
+  users:
+    {{ .Values.postgres.username }}:
+    - superuser
+    {{ .Values.postgres.geonode_databasename_and_username }}:
+    - superuser
+    - createdb
+    - login
+    {{ .Values.postgres.geodata_databasename_and_username }}:
+    - superuser
+    - createdb
+    - login
+  databases:
+    {{ .Values.postgres.geonode_databasename_and_username }}: {{ .Values.postgres.geonode_databasename_and_username }}
+    {{ .Values.postgres.geodata_databasename_and_username }}: {{ .Values.postgres.geodata_databasename_and_username }}
+  preparedDatabases:
+    {{ .Values.postgres.geodata_databasename_and_username }}:
+      schemas:
+        {{ .Values.postgres.schema }}: {}
+      extensions:
+        pg_partman: {{ .Values.postgres.schema }}
+        postgis: {{ .Values.postgres.schema }}
+    {{ .Values.postgres.geodata_databasename_and_username }}:
+      schemas:
+        {{ .Values.postgres.schema }}: {}
+      extensions:
+        pg_partman: {{ .Values.postgres.schema }}
+        postgis: {{ .Values.postgres.schema }}
+  postgresql:
+    version: {{ .Values.postgres.operator.postgres_version | quote }}
+{{ end }}

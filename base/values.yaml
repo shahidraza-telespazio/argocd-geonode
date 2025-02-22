@@ -17,8 +17,8 @@ geonode:
     requests:
       cpu: "500m"
       memory: "1Gi"
-  # persistant:
-  #   storageSize: 2Gi
+  persistant:
+    storageSize: 10Gi
 
   ingress:
     enabled: False
