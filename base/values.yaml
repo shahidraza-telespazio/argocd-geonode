@@ -17,11 +17,22 @@ geonode:
     requests:
       cpu: "200m"
       memory: "1Gi"
+
   persistant:
     storageSize: 10Gi
 
   ingress:
     enabled: False
+
+  uwsgi:
+    buffer_size: 32768
+    processes: 8
+    threads: 2
+    harakiri: 600
+    max_requests: 5000
+    cheaper: 4
+    cheaper_initial: 8
+    worker_reload_mercy: 60
 
   secret:
     superUser:
@@ -46,6 +57,15 @@ geoserver:
     requests:
       cpu: "200m"
       memory: "512Mi"
+
+nginx:
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "200m"
+      memory: "256Mi"
 
 pycsw:
   resources:
