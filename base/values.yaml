@@ -92,9 +92,9 @@ postgres:
     hostname: geonode-postgresql.postgres
     port: 5432
     secret:
-      postgres_password: mJVulBcn8ivuAW5LdUeZGyDVumKqSA4otCfqntTm1a8nv8sXbFmEf8oUSyX7JUHq
-      geonode_password: frNyGcl68Cr93BCWiafXNwW37fiB191q3W1ty9aRbuXGQfFakxoLjNjktROz75MY
-      geodata_password: MbTQLeoySfxKW4tCDDmz07xSDb5V8I50nJ2KXguXqTDsBbvVgy0b61xQXWbliUJA
+      postgres_password: auKtMMdl1wtkjVMXwr4RWEr3JtwuR2HavR3d4BEOMy2P6uGrHzsmD4XImAhSYvqp
+      geonode_password: X24al3LwQJJHpK3GkBAdRu1WSSazfrsh1lNxPPkm0OTmYZQPg6lrrlKalFMPl7pU
+      geodata_password: wvIsdkxUGu2SeWRiyUU4gZ2G9UzUNsE2NSACHkKttqMFF4amAa0qySaDSM97BRd1
 
 postgres-operator:
   enabled: False
