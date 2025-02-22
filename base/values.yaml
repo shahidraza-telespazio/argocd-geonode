@@ -47,6 +47,15 @@ geoserver:
       cpu: "500m"
       memory: "1Gi"
 
+pycsw:
+  resources:
+    limits:
+      cpu: "1"
+      memory: "2Gi"
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+
 rabbitmq:
   replicaCount: 1
   auth:
