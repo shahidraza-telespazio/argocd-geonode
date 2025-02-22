@@ -6,7 +6,7 @@ geonode:
     debug: True
     debug_static: True
     externalScheme: http
-    externalDomain: geonode
+    externalDomain: geonode-k8s-geonode.geonode.svc.cluster.local
   resources:
     limits:
       cpu: "800m"
