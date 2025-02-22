@@ -50,5 +50,8 @@ postgres:
       postgres_password: ""
       geonode_password: ""
       geodata_password: ""
-# postgres-operator:
-#   enabled: True
+postgres-operator:
+  configLoadBalancer:
+    db_hosted_zone: geonode.example.org
+    enable_master_load_balancer: true
+    external_traffic_policy: Cluster
