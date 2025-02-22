@@ -10,8 +10,15 @@ geonode:
     externalScheme: http
     externalDomain: geonode
 
-  persistant:
-    storageSize: 2Gi
+  resources:
+    limits:
+      cpu: "1"
+      memory: "2Gi"
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+  # persistant:
+  #   storageSize: 2Gi
 
   ingress:
     enabled: False
@@ -30,6 +37,15 @@ geonode:
     open_signup: True
     email_verification: "False"
     authentication_method: username_email
+
+geoserver:
+  resources:
+    limits:
+      cpu: "1"
+      memory: "2Gi"
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
 
 rabbitmq:
   replicaCount: 1
