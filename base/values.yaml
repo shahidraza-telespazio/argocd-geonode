@@ -9,11 +9,11 @@ geonode:
     externalDomain: geonode
   resources:
     limits:
-      cpu: "1"
-      memory: "2Gi"
+      cpu: "800m"
+      memory: "1.5Gi"
     requests:
-      cpu: "500m"
-      memory: "1Gi"
+      cpu: "400m"
+      memory: "768Mi"
   persistant:
     storageSize: 2Gi
   ingress:
@@ -32,19 +32,19 @@ geonode:
 geoserver:
   resources:
     limits:
-      cpu: "1"
-      memory: "2Gi"
+      cpu: "800m"
+      memory: "1.5Gi"
     requests:
-      cpu: "500m"
-      memory: "1Gi"
+      cpu: "400m"
+      memory: "768Mi"
 pycsw:
   resources:
     limits:
-      cpu: "1"
-      memory: "2Gi"
-    requests:
       cpu: "500m"
       memory: "1Gi"
+    requests:
+      cpu: "200m"
+      memory: "512Mi"
 rabbitmq:
   replicaCount: 1
   auth:
