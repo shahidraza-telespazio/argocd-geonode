@@ -1,100 +1,66 @@
 global:
   storageClass: standard
-
 geonode:
   replicaCount: 1 # not working yet
-
   general:
     debug: True
     debug_static: True
     externalScheme: http
     externalDomain: geonode
-
   resources:
     limits:
-      cpu: "500m"
+      cpu: "1"
       memory: "2Gi"
     requests:
-      cpu: "200m"
+      cpu: "500m"
       memory: "1Gi"
-
   persistant:
-    storageSize: 10Gi
-
+    storageSize: 2Gi
   ingress:
     enabled: False
-
-  uwsgi:
-    buffer_size: 32768
-    processes: 8
-    threads: 2
-    harakiri: 600
-    max_requests: 5000
-    cheaper: 4
-    cheaper_initial: 8
-    worker_reload_mercy: 60
-
   secret:
     superUser:
       password: geonode
-
   mail:
     enabled: False
-
   ldap:
     enabled: False
-
   register:
     open_signup: True
     email_verification: "False"
     authentication_method: username_email
-
 geoserver:
   resources:
     limits:
+      cpu: "1"
+      memory: "2Gi"
+    requests:
       cpu: "500m"
       memory: "1Gi"
-    requests:
-      cpu: "200m"
-      memory: "512Mi"
-
-nginx:
-  resources:
-    limits:
-      cpu: "500m"
-      memory: "512Mi"
-    requests:
-      cpu: "200m"
-      memory: "256Mi"
-
 pycsw:
   resources:
     limits:
-      cpu: "300m"
-      memory: "512Mi"
+      cpu: "1"
+      memory: "2Gi"
     requests:
-      cpu: "100m"
-      memory: "256Mi"
-
+      cpu: "500m"
+      memory: "1Gi"
 rabbitmq:
   replicaCount: 1
   auth:
     username: rabbituser
     password: rabbit_password
-
 postgres:
   type: external
   username: postgres
   geonode_databasename_and_username: geonode
   geodata_databasename_and_username: geodata
-
   external:
-    hostname: geonode-postgresql.postgres
+    hostname: geonode-postgresql
     port: 5432
     secret:
       postgres_password: auKtMMdl1wtkjVMXwr4RWEr3JtwuR2HavR3d4BEOMy2P6uGrHzsmD4XImAhSYvqp
       geonode_password: X24al3LwQJJHpK3GkBAdRu1WSSazfrsh1lNxPPkm0OTmYZQPg6lrrlKalFMPl7pU
       geodata_password: wvIsdkxUGu2SeWRiyUU4gZ2G9UzUNsE2NSACHkKttqMFF4amAa0qySaDSM97BRd1
-
 postgres-operator:
   enabled: False
