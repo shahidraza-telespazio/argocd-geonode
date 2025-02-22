@@ -5,6 +5,7 @@ namespace: geonode
 
 resources:
   - namespace.yaml
+  - postgres.yaml
 
 helmCharts:
   - name: geonode-k8s
