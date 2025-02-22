@@ -1,9 +1,0 @@
-{{ if .Values.pycsw.enabled }}
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Release.Name }}-pycsw-cfg
-  namespace: {{ .Release.Namespace }}
-data:
-  pycsw.cfg: {{- .Values.pycsw.config | toYaml | indent 1 }}
-{{ end }}
