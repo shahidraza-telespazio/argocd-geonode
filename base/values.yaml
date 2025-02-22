@@ -10,7 +10,7 @@ geonode:
   resources:
     limits:
       cpu: "800m"
-      memory: "1.5Gi"
+      memory: "1536Mi"
     requests:
       cpu: "400m"
       memory: "768Mi"
@@ -33,7 +33,7 @@ geoserver:
   resources:
     limits:
       cpu: "800m"
-      memory: "1.5Gi"
+      memory: "1536Mi"
     requests:
       cpu: "400m"
       memory: "768Mi"
