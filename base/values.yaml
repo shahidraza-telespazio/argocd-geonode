@@ -52,4 +52,4 @@ postgres:
       geodata_password: ""
 
 postgres-operator:
-  enabled: False
+  enabled: True
