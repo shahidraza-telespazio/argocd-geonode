@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: geonode
+
+resources:
+  - namespace.yaml
+
+helmCharts:
+  - name: geonode-k8s
+    repo: https://GeoNodeUserGroup-DE.github.io/geonode-k8s/
+    releaseName: geonode-k8s
+    namespace: geonode
+    version: 1.2.3-alpha
+    valuesFile: values.yaml  # Uncommented this line
